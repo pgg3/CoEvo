@@ -1,0 +1,5 @@
+{
+    "sample_order": 1055,
+    "function": "def equation(b: np.ndarray, s: np.ndarray, temp: np.ndarray, pH: np.ndarray, params: np.ndarray) -> np.ndarray:\n    \"\"\" Mathematical function for bacterial growth rate\n\n    Args:\n        b: A numpy array representing observations of population density of the bacterial species.\n        s: A numpy array representing observations of substrate concentration.\n        temp: A numpy array representing observations of temperature.\n        pH: A numpy array representing observations of pH level.\n        params: Array of numeric constants or parameters to be optimized\n\n    Return:\n        A numpy array representing bacterial growth rate as the result of applying the mathematical function to the inputs.\n    \"\"\"\n    growth_rate = (params[0] * b) / (1 + params[1] * np.exp(-params[2] * s) + params[3] * np.exp(-params[4] * temp) + params[5] * np.exp(-params[6] * pH) + params[7] + params[8] * s * b + params[9] * temp * pH)\n    \n    return growth_rate\n\n",
+    "score": -0.0012801001191387793
+}

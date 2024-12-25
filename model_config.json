@@ -1,0 +1,7 @@
+{
+  "host": "<--API_ENDPOINT-->",
+  "key":"<--API_Key-->",
+  "model":"gpt-4o-mini",
+  "url": "/v1/chat/completions",
+  "timeout": 120
+}
