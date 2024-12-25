@@ -37,3 +37,18 @@ Requires: python >= 3.10
 ```shell
 python test_res.py --problem oscillation_1 --paper coevo --model gpt35
 ```
+
+## Contact
+
+If you are interested in CoEvo or if you encounter any difficulty using the platform, you can:
+
+1. Join our QQ Group
+
+   <img src="./assets/figs/qq.jpg" style="width: 30%; height: auto;">
+
+2. Contact us through email pingguo5-c@my.cityu.edu.hk
+
+
+## Citation
+Coming soon...
+
