@@ -50,5 +50,14 @@ If you are interested in CoEvo or if you encounter any difficulty using the plat
 
 
 ## Citation
-Coming soon...
-
+```
+@misc{guo2024coevocontinualevolutionsymbolic,
+      title={CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models}, 
+      author={Ping Guo and Qingfu Zhang and Xi Lin},
+      year={2024},
+      eprint={2412.18890},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2412.18890}, 
+}
+```
