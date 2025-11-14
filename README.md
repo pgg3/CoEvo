@@ -42,11 +42,7 @@ python test_res.py --problem oscillation_1 --paper coevo --model gpt35
 
 If you are interested in CoEvo or if you encounter any difficulty using the platform, you can:
 
-1. Join our QQ Group
-
-   <img src="./assets/figs/qq.jpg" style="width: 30%; height: auto;">
-
-2. Contact us through email pingguo5-c@my.cityu.edu.hk
+1. Contact us through email pingguo5-c@my.cityu.edu.hk
 
 
 ## Citation
