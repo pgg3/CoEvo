@@ -1,59 +1,48 @@
-# CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models
-## Install Dependency
-Requires: python >= 3.10
-```shell
-conda create -n coevo python=3.10
-conda activate coevo
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118  # install your torch manually
+# CoEvo
+
+**CoEvo: Continual Evolution of Symbolic Solutions using Large Language Models**
+
+Official implementation for the AAAI 2026 paper. CoEvo is built on [EvoToolkit](https://github.com/pgg3/evotoolkit) and uses multi-layer idea generation with Pareto-based selection for symbolic regression and scientific discovery.
+
+> Original standalone implementation: [`v1`](../../tree/v1) branch
+
+## Installation
+
+Requires Python >= 3.10.
+
+```bash
+pip install uv
 cd CoEvo
-pip install -e . 
+uv sync
 ```
 
-## Run
-### model_config
-```json
-{
-  "host": "<--API_ENDPOINT-->",
-  "key":"<--API_Key-->",
-  "model":"gpt-4o-mini",
-  "url": "/v1/chat/completions",
-  "timeout": 120
+## Usage
+
+```bash
+uv run python main_run.py --task oscillation_1 --max_gen 97 --pop_size 2
+```
+
+Set environment variables for LLM API:
+```bash
+export API_URL="https://api.openai.com/v1"
+export API_KEY="your-key"
+export MODEL="gpt-4o"
+```
+
+## Citation
+
+```bibtex
+@inproceedings{guo2026coevo,
+  title={Coevo: Continual evolution of symbolic solutions using large language models},
+  author={Guo, Ping and Zhang, Qingfu and Lin, Xi},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={40},
+  number={3},
+  pages={1810--1818},
+  year={2026}
 }
-```
-Requires: python >= 3.10
-```shell
-python main_run.py --problem oscillation_1
-```
- - **Running log supported:**
-```shell
-conda activate coevo  # tensorboard dependecy is included in the package
-cd res
-tensorboard.exe --logdir .  # for windows users
-```
-
-
-## Validate the results for the paper
-Requires: python >= 3.10
-```shell
-python test_res.py --problem oscillation_1 --paper coevo --model gpt35
 ```
 
 ## Contact
 
-If you are interested in CoEvo or if you encounter any difficulty using the platform, you can:
-
-1. Contact us through email pingguo5-c@my.cityu.edu.hk
-
-
-## Citation
-```
-@misc{guo2024coevocontinualevolutionsymbolic,
-      title={CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models}, 
-      author={Ping Guo and Qingfu Zhang and Xi Lin},
-      year={2024},
-      eprint={2412.18890},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2412.18890}, 
-}
-```
+For questions or issues, contact: pingguo5-c@my.cityu.edu.hk
