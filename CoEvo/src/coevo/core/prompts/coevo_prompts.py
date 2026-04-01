@@ -43,7 +43,12 @@ class CoEvoPromptBuilder:
         rep_list: list[dict],
         rep_use_name: str,
     ) -> None:
-        self.task_description = task_spec.extras.get("raw_task_description", task_spec.prompt)
+        raw_desc = task_spec.extras.get("raw_task_description", task_spec.prompt)
+        program_template = task_spec.extras.get("program_template", "")
+        if program_template:
+            self.task_description = f"{raw_desc}\nProgram Template:\n{program_template}"
+        else:
+            self.task_description = raw_desc
         self.num_idea = num_idea
         self.rep_list = rep_list
         self.rep_use_name = rep_use_name

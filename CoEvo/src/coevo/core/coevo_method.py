@@ -141,17 +141,20 @@ class CoEvoMethod(PopulationMethod):
     # ------------------------------------------------------------------
 
     def _register_chain(self, chain: list[Solution]) -> None:
-        """Register all solutions in a chain with evotoolkit state machinery."""
+        """Register a chain: only the last solution enters population."""
         chain_id = self.state.next_chain_id
         self.state.next_chain_id += 1
         self.state.layer_chains[chain_id] = chain
 
         for sol in chain:
             sol.metadata.extras["chain_id"] = chain_id
-            self._register_population_solution(sol)
+            # Record in history and generation stats but NOT in population
+            self.state.sol_history.append(sol)
+            self.state.current_generation_solutions.append(sol)
+            self.state.sample_count += 1
 
-        # The chain representative in population is the last solution
-        # (Already added via _register_population_solution above)
+        # Only the chain representative (last solution) enters population
+        self._register_population_solution(chain[-1])
 
     def _manage_population(self) -> None:
         """Trim population to pop_size using NDS or score-based selection."""
